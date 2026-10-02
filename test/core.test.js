@@ -113,6 +113,8 @@ test('予定', () => {
   assert.deepEqual(target('金曜 15:30 学年会', '2026-10-02 10:00'), { kind: 'event', date: '2026-10-02', at: '15:30' });
   assert.deepEqual(target('金曜 15時 学年会', '2026-10-02 16:00'), { kind: 'event', date: '2026-10-09', at: '15:00' });
   assert.deepEqual(target('10/5 午前8時 打合せ', '2026-10-02 10:00'), { kind: 'event', date: '2026-10-05', at: '08:00' });
+  // 「2時間」は時刻ではない
+  assert.deepEqual(target('採点 2時間かかる', '2026-10-02 10:00'), { kind: 'memo', date: '2026-10-02' });
   // クラス名があれば授業を優先
   assert.deepEqual(target('3-4 15時までに提出', '2026-10-02 10:00'), { kind: 'slot', date: '2026-10-05', slot: 'p4' });
 });

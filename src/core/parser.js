@@ -8,7 +8,7 @@ const PERIOD_RE = /([1-7])\s*(?:限|時間目|時限)目?/;
 const KAERI_RE = /帰り\s*の?\s*(?:st|shr|hr|会|学活)|終礼|終学活|終わりの会/;
 const ASA_RE = /朝\s*の?\s*(?:st|shr|hr|会|学活)|朝礼|朝学活/;
 const BARE_ST_RE = /(?<![a-z])(?:st|shr|hr)(?![a-z])/;
-const TIME_RE = /(午前|午後|am|pm)?\s*(\d{1,2})\s*(?::|時)\s*(?:(\d{1,2})\s*分?|(半))?/;
+const TIME_RE = /(午前|午後|am|pm)?\s*(\d{1,2})\s*(?::|時(?!間))\s*(?:(\d{1,2})\s*分?|(半))?/;
 
 const BEFORE_OK = /[\s、。,.()（）「」・:：/]/;
 const AFTER_OK = /[\s、。,.()（）「」・:：のでにへはも]/;
